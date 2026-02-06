@@ -1,11 +1,8 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
+  base: "/Valentines/", // <-- Add this line
   plugins: [react()],
-  // allow importing HEIC files as static assets
-  assetsInclude: ['**/*.{heic,HEIC}'],
-  // GitHub Pages serves at /repo-name/ so set base path
-  base: '/Valentines/',
-})
+});
