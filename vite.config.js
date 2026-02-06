@@ -6,6 +6,4 @@ export default defineConfig({
   plugins: [react()],
   // allow importing HEIC files as static assets
   assetsInclude: ['**/*.{heic,HEIC}'],
-  // GitHub Pages serves at /repo-name/ so set base path
-  base: '/Valentines/',
 })
