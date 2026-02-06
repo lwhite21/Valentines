@@ -1,0 +1,123 @@
+.valentine-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #ff1744 0%, #f50057 25%, #d81b60 50%, #c2185b 75%, #ad1457 100%);
+  font-family: 'Trebuchet MS', 'Georgia', serif;
+  overflow: hidden;
+  position: relative;
+  padding-top: 30vh;
+  box-sizing: border-box;
+}
+
+.valentine-container::before {
+  content: '♥';
+  position: absolute;
+  font-size: 12rem;
+  opacity: 0.05;
+  top: -20px;
+  left: -20px;
+  color: white;
+  transform: rotate(-15deg);
+  z-index: 0;
+}
+
+.valentine-container::after {
+  content: '♥';
+  position: absolute;
+  font-size: 10rem;
+  opacity: 0.05;
+  bottom: -10px;
+  right: -10px;
+  color: white;
+  transform: rotate(25deg);
+  z-index: 0;
+}
+
+.text-container {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin: 0 0 2rem 0;
+  letter-spacing: 3px;
+  text-shadow: 0 4px 15px rgba(139, 0, 50, 0.5),
+               0 8px 25px rgba(0, 0, 0, 0.3),
+               2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-style: italic;
+  z-index: 10;
+  position: relative;
+  white-space: normal;
+}
+
+.word {
+  display: inline-block;
+  margin: 0 0.3em;
+  animation: popOut 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  opacity: 0;
+}
+
+@keyframes popOut {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.button-container {
+  display: flex;
+  gap: 3rem;
+  position: relative;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.yes-button,
+.no-button {
+  padding: 18px 50px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  letter-spacing: 1px;
+}
+
+.yes-button {
+  background: linear-gradient(135deg, #ff1744 0%, #f50057 100%);
+  color: white;
+  font-size: 1.4rem;
+  box-shadow: 0 8px 30px rgba(255, 23, 68, 0.4);
+}
+
+.yes-button:hover {
+  background: linear-gradient(135deg, #f50057 0%, #d81b60 100%);
+  transform: scale(1.15);
+  box-shadow: 0 12px 40px rgba(255, 23, 68, 0.6);
+}
+
+.yes-button:active {
+  transform: scale(1.05);
+}
+
+.no-button {
+  background: linear-gradient(135deg, #90a4ae 0%, #78909c 100%);
+  color: white;
+  transition: none;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.no-button:hover {
+  background: linear-gradient(135deg, #90a4ae 0%, #78909c 100%);
+}

@@ -1,0 +1,145 @@
+.success-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  font-family: 'Arial', sans-serif;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+.success-content {
+  text-align: center;
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-title {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: bounceIn 0.8s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.success-message {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 3rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.pictures-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.picture-frame {
+  position: relative;
+  width: clamp(280px, 30vw, 480px);
+  height: clamp(280px, 30vw, 480px);
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  animation: slideIn 0.6s ease-out;
+  transform-origin: center;
+}
+
+.picture-frame:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.picture-frame:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.picture-frame:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.picture-frame img,
+.picture-frame video,
+.picture-frame .picture-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+  display: block;
+}
+
+.picture-frame:hover img,
+.picture-frame:hover video,
+.picture-frame:hover .picture-media {
+  transform: scale(1.06);
+}
+
+.note {
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .success-title {
+    font-size: 2rem;
+  }
+
+  .success-message {
+    font-size: 1.2rem;
+  }
+
+  .pictures-gallery {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .picture-frame {
+    width: 250px;
+    height: 250px;
+  }
+}
