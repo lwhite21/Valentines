@@ -4,11 +4,20 @@ on:
   push:
     branches: [ main ]
 
+# Request write permission for the workflow so the publish step can push to gh-pages.
+permissions:
+  contents: write
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # ensure the checkout action keeps auth token available for pushing
+          persist-credentials: true
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -24,5 +33,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
+          # uses the built-in GITHUB_TOKEN which now has write permission
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
